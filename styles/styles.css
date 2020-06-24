@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
+:root {
+    --bg: black;
+    --accent: #ff5100;
+    --inactive: #8a8a8a;
+    --transparent: #1f1e1e;
+    --active: white;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12pt;
+
+}
+
+body {
+    margin: 0px;
+    background-color: var(--bg);
+    
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 60px;
+    
+}
+
+.nav-left {
+    display: flex;
+}
+
+.nav-right {
+    display: flex;
+}
+
+.nav-link {
+    padding: 10px
+    
+}
+
+.nav-link a {
+    color: var(--inactive);
+    text-decoration: none;
+    transition: color 0.5s;
+}
+
+.nav-link a:hover {
+    color: var(--active);
+}
+
+.form {
+    text-align: center;
+}
+
+.credentials {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+}
+
+.submit {
+    display: flex;
+    padding: 40px;
+    justify-content: center;
+    text-align: center;
+}
+
+.name{
+    display: flex;
+    padding: 20px;
+    color: var(--active);
+}
+
+.affil{
+    display: flex;
+    padding: 20px;
+    color: var(--active);
+}
+
+.classfiles{
+    display: flex;
+    justify-content: center;
+}
+form{
+    position: absolute;
+    width: 70%;
+    height: 200px;
+    align-self: center;
+    text-align: center;
+    margin-top: 60px;
+    margin-left: 15%;
+    border: 4px dashed var(--inactive);
+    border-radius: 4px;
+    color: var(--inactive);
+}
+form p{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 170px;
+    color: var(--inactive);
+}
+#dragdrop {
+    position: absolute;
+    color: var(--inactive);
+    width: 100%;
+    height: 100%;
+    outline: none;
+    opacity: 0;
+}
+#credentials {
+    background-color: var(--bg);
+    color: var(--active);
+    font-size: 12pt;
+    text-align: center;
+    border: none;
+    padding-bottom: 5px;
+    border-bottom: 2pt solid var(--inactive);
+    outline: none;  
+}
+
+form button{
+    margin: 0;
+    color: var(--bg);
+    background: var(--transparent);
+    border: none;
+    width: 50%;
+    height: 35px;
+    margin-top: -20px;
+    margin-left: -4px;
+    border-radius: 4px;
+    transition: all .2s ease;
+    outline: none;
+    font-weight: bold;
+}
+form button:hover{
+    background: var(--inactive);
+    color: var(--bg);
+    font-size: 9pt;
+    font-weight: bolder;
+    width: 51%;
+}
+form button:active{
+    border:0;
+}
+
+::placeholder {
+    color: var(--transparent);
+}
+
+label {
+    margin: 0 auto;
+}
+.radio-button-label > input { 
+display: none;
+}
+.radio-button-label > img {
+cursor: pointer;
+margin: 0 auto;
+padding: 5px;
+width: 70%;
+transition: all 0.2s ease; 
+}
+.radio-button-label > input:checked + img { 
+border: 3px solid var(--inactive);
+}
