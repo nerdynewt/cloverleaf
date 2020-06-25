@@ -18,6 +18,12 @@
                     <div class="nav-link">
                         <a href="https://github.com/sdgniser/reportinator"><i class="fa fa-github fa-2x"></i></a>
                     </div>
+                    <div class="nav-link">
+                        <a href="about.html"><i class="fa fa-book fa-2x"></i></a>
+                    </div>
+                    <div class="nav-link">
+                        <a href="https://github.com/sdgniser/reportinator/blob/master/LICENSE"><i class="fa fa-balance-scale fa-2x"></i></a>
+                    </div>                    
                 </div>
                 <div class="nav-right">
                     <div class="nav-link">
@@ -27,30 +33,30 @@
             </div>
             <!-- form -->
             <div class="form">
-                <form action="reportinator.php" method="POST">
-                    <input id="dragdrop" type="file" multiple>
-                    <p>Drag your files here or click in this area.</p>
-                    <h3>CHOOSE YOUR WARRIOR</h3>     
-                    <div class="classfiles">
-                        <label class="radio-button-label">
-                            <input type="radio" name="radio-control" value="double.cls" />
-                            <img src="assets/images/double.png">
-                          </label>                        
-                          <label class="radio-button-label">
-                            <input type="radio" name="radio-control" value="single.cls"/>
-                            <img src="assets/images/single.png">
-                          </label>  
+                <form action="reportinator.php" method="POST" enctype="multipart/form-data">
+                    <input id="file-upload" type="file" name="fileUpload" />
+                    <label for="file-upload" id="file-drag">
+                        Drag and drop or click to upload
+                    </label>
+                    <output for="file-upload" id="messages"></output>
+
+                    <h3>CHOOSE YOUR WARRIOR</h3>
+                    <div class="cc-selector">
+                        <input checked="checked" id="double" type="radio" name="class" value="double.cls" />
+                        <label class="drinkcard-cc double" for="double"></label>
+                        <input id="single" type="radio" name="class" value="single.cls"/>
+                        <label class="drinkcard-cc single"for="single"></label>
                     </div>
                     <div class="credentials">
                         <div class="name">
-                            <input id="credentials" type="text" placeholder="YOUR NAME">
+                            <input id="credentials" type="text" placeholder="YOUR NAME" name="username">
                         </div>
                         <div class="affil">
-                            <input id="credentials" type="text" placeholder="YOUR COLLEGE">
+                            <input id="credentials" type="text" placeholder="YOUR COLLEGE" name="affiliation">
                         </div>
                     </div>                    
                     <div class="submit">
-                        <button type="submit">UPLOAD</button>
+                        <button type="submit" name="submit-button" value="submit-button">UPLOAD</button>
                     </div>
                 </form>
             </div>

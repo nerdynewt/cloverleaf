@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Software Development Group NISER" />
+        <meta name="description" content="Write your report in minutes using markdown" />
+        <title>About</title>
+        <!-- styles -->
+        <link rel="stylesheet" href="styles/styles.css" type="text/css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div class="navbar">
+            <div class="nav-left">
+                <div class="nav-link">
+                    <a href="https://github.com/sdgniser/reportinator"><i class="fa fa-github fa-2x"></i></a>
+                </div>
+                <div class="nav-link">
+                    <a href="index.html"><i class="fa fa-home fa-2x"></i></a>
+                </div>                   
+            </div>
+            <div class="nav-right">
+                <div class="nav-link">
+                    <a href="https://sdgniser.github.io"><i class="fa fa-bolt"></i> sdgniser</a>
+                </div>
+            </div>
+        </div>
+        <div class="container-about">
+            <h3 id="About this project">About this project:</h3>
+            <h3 id="input-markdown">Input Markdown:</h3>
+            <p>The name of the input markdown is the title of the report. Recommended use: Typora, as a markdown editor, otherwise:</p>
+            <p>For recognizing multiple subsections, or lists with a text above them, it is necessary that you leave a one line gap between each subsection, or before the list. There is an example loaded in the current repo, which may be referred to, initially.
+            <strong>Tables and Graphs will only be plotted only if the program sees the appropriate section headings.</strong> If you are leaving some section like graphs blank, and want to only fill it up with python graphs, you need to leave one blank line in the section. That is, you must have atleast one line in each section, even if it is blank.</p>
+            <h3 id="equations-">Equations:</h3>
+            <p>For putting in equations, you must type:</p>
+            <pre><code><span class="hljs-variable">$$</span> your-equation <span class="hljs-variable">$$</span> <span class="hljs-comment">#e:tag</span></code></pre>
+            <p>For referencing them anywhere inside the text, you just need to type <code>@e:tag</code> at the appropriate place.</p>
+            <h3 id="images-">Images:</h3>
+            <p>Just use the default markdown syntax for images. You can drag and drop images in typora. No need to type.</p>
+            <pre><code>![<span class="hljs-string">This is the caption</span>](<span class="hljs-link">image.png</span>)</code></pre>
+            <p>Refer to these images by saying @f:name in-text.</p>
+            <h3 id="tables-">Tables:</h3>
+            <p>All the csv files placed in the source folder will be converted to tables. For good looking reports, please make sure that there are a maximum of 4 columns, in double column. To refer to the table anywhere, you do <code>@t:csvname</code>. You can use excel too. Just keep the .xlsx in your project directory and have the names of the sheets, what you would want the caption of the table.</p>
+            <h3 id="graphs-">Graphs:</h3>
+            <p>These are triggered by a graph statement at the end of the csvfile (Look at the example in example). So if the line contains <code>graph(x,y)</code>, then a graph will be plotted. Writing <code>fit(lin)</code> next will fit the graph in the said format. Look at the example.
+            You can fit polynomial functions till 2 order. To refer to a graph, you need to do <code>@g:graphname</code>. The graph name is y column name without \ and $ and the order number. So, it might be Potential1.
+            Of course, this supports excel files. Just keep your data as sheets inside a excel file named data.xlsx. Just keep this inside your project directory.</p>
+            <h3 id="referencing-">Referencing:</h3>
+            <p>You can add references by just adding a dois.txt file, containing the list of dois in your source directory. You might need to manually compile it to actually get the references printed. Please note that you can just not use the referencing schemes explained above with the <code>@</code> and just type <code>\ref{something}</code> to use the default syntax.</p>
+            <h3 id="compiling-">Compiling:</h3>
+            <p>Autocompile is toggled on if there is a compiler installation in the system.</p>
+            
+            <h3 id="the-maintainers-">The Maintainers:</h1>
+            <p>This project is being maintained by Spandan Anupam and Visnhu Namboodiri K S. Thank us by using this program.</p>
+        </div>
+    </body>
