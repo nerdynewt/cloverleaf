@@ -1,5 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+/* GOOGLE FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
 
+/* BASE CONFIGS */
 :root {
     --bg: black;
     --accent: #ff5100;
@@ -9,21 +14,19 @@
 
     font-family: 'Montserrat', sans-serif;
     font-size: 12pt;
-
+    color: var(--inactive)
 }
 
 body {
     margin: 0px;
     background-color: var(--bg);
-    
 }
 
 /* NAVBAR */
 .navbar {
     display: flex;
     justify-content: space-between;
-    padding: 60px;
-    
+    padding: 60px;   
 }
 
 .nav-left {
@@ -35,8 +38,7 @@ body {
 }
 
 .nav-link {
-    padding: 10px
-    
+    padding: 10px  
 }
 
 .nav-link a {
@@ -49,6 +51,66 @@ body {
     color: var(--active);
 }
 
+/* ABOUT CONTAINER NEEDS DESIGN IMPROVS*/
+.container-about {
+    display: block;
+    margin-left: 25%;
+    padding-bottom: 10%; 
+    padding-top: 5%;
+    width: 50%;   
+    font-family: "PT Sans", sans-serif;
+    font-weight: 200; 
+    text-align: justify;
+}
+
+pre{
+	background-color: var(--transparent);
+	padding: 10px;
+	-webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    font-family: "Source Code Pro", sans-serif;
+	border-radius: 5px;
+    overflow: auto;
+    color: var(--inactive)
+}
+
+code{
+	background-color: var(--transparent);
+    padding: 1px 3px;
+    font-family: "Source Code Pro", sans-serif;
+    font-size: 13px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+    border-radius: 2px;	
+    color: var(--inactive)
+}
+
+/* DRAG AND DROP */
+.draganddrop{
+    padding-left: 33%;
+}
+
+.drag { 
+    height: 200px;
+    width: 50%; 
+    font-family: arial; 
+    font-size: 12px;
+    border: 2px dashed var(--inactive);
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.drag:hover {
+    border: 2px dotted var(--inactive);
+}
+
+input[type="file"]{
+    height: 100%;
+    width: 100%;
+    opacity: 0;   
+  }
+
+/* FORM */
 .form {
     text-align: center;
 }
@@ -67,49 +129,22 @@ body {
     text-align: center;
 }
 
-.name{
+.name {
     display: flex;
     padding: 20px;
     color: var(--active);
 }
 
-.affil{
+.affil {
     display: flex;
     padding: 20px;
     color: var(--active);
 }
 
-.classfiles{
-    display: flex;
-    justify-content: center;
+::placeholder {
+    color: var(--transparent);
 }
-form{
-    position: absolute;
-    width: 70%;
-    height: 200px;
-    align-self: center;
-    text-align: center;
-    margin-top: 60px;
-    margin-left: 15%;
-    border: 4px dashed var(--inactive);
-    border-radius: 4px;
-    color: var(--inactive);
-}
-form p{
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    line-height: 170px;
-    color: var(--inactive);
-}
-#dragdrop {
-    position: absolute;
-    color: var(--inactive);
-    width: 100%;
-    height: 100%;
-    outline: none;
-    opacity: 0;
-}
+
 #credentials {
     background-color: var(--bg);
     color: var(--active);
@@ -121,48 +156,78 @@ form p{
     outline: none;  
 }
 
+/* BIG BOI BUTTON */
 form button{
     margin: 0;
     color: var(--bg);
     background: var(--transparent);
     border: none;
-    width: 50%;
+    width: 40%;
     height: 35px;
     margin-top: -20px;
     margin-left: -4px;
     border-radius: 4px;
     transition: all .2s ease;
-    outline: none;
     font-weight: bold;
+    outline: none;
+
 }
+
 form button:hover{
     background: var(--inactive);
     color: var(--bg);
     font-size: 9pt;
-    font-weight: bolder;
-    width: 51%;
-}
-form button:active{
-    border:0;
+    width: 41%;
 }
 
-::placeholder {
-    color: var(--transparent);
+/* INCLUDING CODE FROM http://jsfiddle.net/La8wQ/313/ */
+.classfiles {
+    display: flex;
+    justify-content: center;
+    width: 20%;
 }
 
-label {
-    margin: 0 auto;
+.double{
+    background-image: url("../assets/double.png");
 }
-.radio-button-label > input { 
-display: none;
+
+.single{
+    background-image:url("../assets/single.png");
 }
-.radio-button-label > img {
-cursor: pointer;
-margin: 0 auto;
-padding: 5px;
-width: 70%;
-transition: all 0.2s ease; 
+
+.cc-selector input{
+    margin:0;padding:0;
+    -webkit-appearance:none;
+       -moz-appearance:none;
+            appearance:none;
 }
-.radio-button-label > input:checked + img { 
-border: 3px solid var(--inactive);
+
+.cc-selector input:active +.drinkcard-cc{
+    opacity: .9;
+
+}
+
+.cc-selector input:checked +.drinkcard-cc{
+    -webkit-filter: none;
+       -moz-filter: none;
+            filter: none;
+    padding: 2px;
+    border: 2px solid var(--inactive);
+}
+
+.drinkcard-cc{
+    cursor:pointer;
+    background-size:contain;
+    background-repeat:no-repeat;
+    display:inline-block;
+    width:100px; height:100px;
+    -webkit-filter: brightness(1.8) grayscale(1) opacity(.7);
+       -moz-filter: brightness(1.8) grayscale(1) opacity(.7);
+            filter: brightness(1.8) grayscale(1) opacity(.7);
+}
+
+.drinkcard-cc:hover{
+    -webkit-filter: brightness(1.2) grayscale(.5) opacity(.9);
+       -moz-filter: brightness(1.2) grayscale(.5) opacity(.9);
+            filter: brightness(1.2) grayscale(.5) opacity(.9);
 }
